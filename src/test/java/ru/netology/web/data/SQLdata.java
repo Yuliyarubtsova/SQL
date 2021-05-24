@@ -37,15 +37,15 @@ public class SQLdata {
 
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "user", "pass");
-                val Codes = conn.prepareStatement(auth_codes);
-                val Transactions = conn.prepareStatement(card_transactions);
-                val Cards = conn.prepareStatement(cards);
-                val Users = conn.prepareStatement(users);
+                val prepareCodes = conn.prepareStatement(auth_codes);
+                val prepareTransactions = conn.prepareStatement(card_transactions);
+                val prepareCards = conn.prepareStatement(cards);
+                val prepareUsers = conn.prepareStatement(users);
         ) {
-            Codes.executeUpdate(auth_codes);
-            Transactions.executeUpdate(card_transactions);
-            Cards.executeUpdate(cards);
-            Users.executeUpdate(users);
+            prepareCodes.executeUpdate(auth_codes);
+            prepareTransactions.executeUpdate(card_transactions);
+            prepareCards.executeUpdate(cards);
+            prepareUsers.executeUpdate(users);
 
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();

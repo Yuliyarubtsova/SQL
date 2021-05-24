@@ -21,6 +21,9 @@ public class DataHelper {
         return new AuthInfo("petya", "123qwerty");
     }
 
+    public static AuthInfo getAuthInfoInvalid() {
+        return new AuthInfo("vasya", "123");
+    }
     @Value
     public static class VerificationCode {
         private String code;
